@@ -54,4 +54,4 @@ You are not provided with any `index.html` or `styles.css` file, so you have to 
 2. Add deployed link in this `README.md` file (Netlify or Vercel)
 
 
-My Link: https://beautiful-marzipan-b7fc3f.netlify.app/
+My Link: https://silly-cajeta-7ca25a.netlify.app
