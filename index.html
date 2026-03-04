@@ -1,65 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Minimalissimo – About</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minimal Layout</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+
+
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:#f3f3f3;
+color:#111;
+}
+
+
+
+.section{
+border-bottom:1px solid #000;
+}
+
+.grid-3{
+display:grid;
+grid-template-columns:1fr 1fr 1fr;
+}
+
+.grid-2{
+display:grid;
+grid-template-columns:1fr 1fr;
+}
+
+
+
+.cell{
+border-right:1px solid #000;
+padding:40px;
+display:flex;
+flex-direction:column;
+align-items:flex-start;
+position:relative;
+overflow:hidden;
+}
+
+.cell:last-child{
+border-right:none;
+}
+
+
+
+.header{
+border-top:1px solid #000;
+}
+
+.header .cell{
+height:70px;
+justify-content:center;
+font-size:14px;
+letter-spacing:1px;
+}
+
+
+
+.hero{
+height:300px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-top:1px solid #000;
+}
+
+.hero h1{
+font-size:18px;
+letter-spacing:1px;
+}
+
+
+
+.newsletter .cell{
+height:80px;
+justify-content:center;
+}
+
+
+
+.text-content p{
+margin-bottom:25px;
+line-height:1.7;
+max-width:600px;
+}
+
+.text-content h2{
+margin-top:40px;
+margin-bottom:15px;
+font-size:16px;
+letter-spacing:1px;
+}
+
+.text-content ol{
+padding-left:20px;
+}
+
+.text-content li{
+margin-bottom:8px;
+}
+
+
+
+.image img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:transform .6s ease;
+}
+
+.image:hover img{
+transform:scale(1.05);
+}
+
+
+.cell::after{
+content:"";
+position:absolute;
+inset:0;
+background:black;
+opacity:0;
+transition:opacity .3s ease;
+z-index:0;
+}
+
+.cell:hover::after{
+opacity:1;
+}
+
+.cell *{
+position:relative;
+z-index:1;
+transition:color .3s ease;
+}
+
+.cell:hover{
+color:white;
+}
+
+
+.footer .cell{
+height:150px;
+justify-content:center;
+font-size:14px;
+}
+
+
+@media(max-width:900px){
+
+.grid-2,
+.grid-3{
+grid-template-columns:1fr;
+}
+
+.cell{
+border-right:none;
+border-bottom:1px solid #000;
+}
+
+.hero{
+height:200px;
+}
+
+}
+
+</style>
 </head>
+
 <body>
 
-<header class="header">
-  <div class="header__logo">MINIMALISSIMO</div>
-  <nav class="header__nav">
-    <ul>
-      <li><a href="#">MENU</a></li>
-      <li><a href="#">SUGGEST</a></li>
-    </ul>
-  </nav>
-</header>
 
-<main>
+<section class="section header grid-3">
+<div class="cell">MINIMALISSIMO</div>
+<div class="cell">MENU</div>
+<div class="cell">◐ DARK</div>
+</section>
 
-  <section class="hero">
-    <h1>ABOUT</h1>
-  </section>
 
-  <section class="content">
-    <article class="intro">
-      <p>
-        We always welcome reader submissions...
-      </p>
-    </article>
+<section class="section hero">
+<h1>INSIDE MINIMALISSIMO</h1>
+</section>
 
-    <div class="highlight">
-      YOU'LL ONLY BE CHARGED IF YOUR PROJECT IS ACCEPTED TO BE FEATURED AND NOT BEFORE
-    </div>
 
-    <div class="grid-section">
-      <div class="features">
-        <h3>FEATURES INCLUDE:</h3>
-        <ul>
-          <li>a published feature on this site</li>
-          <li>presence in the archive indefinitely</li>
-          <li>a post on Pinterest</li>
-          <li>a mention in our newsletter</li>
-        </ul>
-      </div>
+<section class="section newsletter grid-3">
+<div class="cell">STAY UP TO DATE</div>
+<div class="cell">ENTER YOUR EMAIL</div>
+<div class="cell">SUBSCRIBE</div>
+</section>
 
-      <div class="cost">
-        <h3>COST:</h3>
-        <p>pay what you think is fair</p>
-      </div>
-    </div>
 
-  </section>
+<section class="section main grid-2">
 
-</main>
+<div class="cell text-content">
 
-<footer class="footer">
-  suggest@minimalissimo.com
-</footer>
+<p>
+Minimalissimo is an independent print and digital magazine founded in 2009 and is dedicated to minimalism. Principally led by Carl Barenbrug for over 10 years and latterly by Manu Moreale, we showcased a curated selection of the finest examples of art, architecture, interiors, furniture, lighting, and product design.
+</p>
+
+<p>
+Minimalissimo will continue to exist as a digital archive with over 15 years of material to browse.
+</p>
+
+<h2>MANIFESTO</h2>
+
+<p>
+We curate to reflect who we are and want to be. We are guided by the principles of minimalism and simplicity. We often admire brutalism and utilitarianism. Our vision is uncompromising and future-focused but with a respect for the past.
+</p>
+
+<p>
+We find beauty in the soft and the raw. This is our taste. This is our creative platform. A platform that showcases our interpretation and appreciation of minimalism in art and design.
+</p>
+
+<h2>PRINCIPLES</h2>
+
+<ol>
+<li>aesthetic: design for love, not only understanding</li>
+<li>collaborative: create beyond your own ability</li>
+<li>experimental: think three-dimensional</li>
+<li>geometric: use pure forms to emphasise precision</li>
+<li>honest: build with integrity</li>
+<li>modular: reuse building blocks</li>
+<li>sustainable: design for people and the planet</li>
+<li>translucent: build in public</li>
+<li>understated: be practical rather than pretty</li>
+<li>unified: design for continual expression</li>
+</ol>
+
+</div>
+
+
+<div class="cell image">
+<img src="https://minimalissimo.com/media/pages/about/b80a2c2bf4-1679670310/mimo-cmhb-setup.jpg">
+</div>
+
+</section>
+
+
+<section class="section footer grid-3">
+<div class="cell">NAVIGATE</div>
+<div class="cell">FOLLOW US</div>
+<div class="cell">MINIMALISSIMO</div>
+</section>
+
 
 </body>
 </html>
